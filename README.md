@@ -70,6 +70,7 @@ for col, typ in datasets['train'].features.items():
     elif isinstance(typ, Sequence) and isinstance(typ.feature, ClassLabel):
         df[col] = df[col].transform(lambda x: [typ.feature.names[i] for i in x])
     display(HTML(df.to_html()))
+    break
 ```
 
 
@@ -87,231 +88,35 @@ for col, typ in datasets['train'].features.items():
   <tbody>
     <tr>
       <th>0</th>
-      <td>572a72f97a1753140016af89</td>
-      <td>Miami</td>
-      <td>The surface bedrock under the Miami area is called Miami oolite or Miami limestone. This bedrock is covered by a thin layer of soil, and is no more than 50 feet (15 m) thick. Miami limestone formed as the result of the drastic changes in sea level associated with recent glaciations or ice ages. Beginning some 130,000 years ago the Sangamonian Stage raised sea levels to approximately 25 feet (8 m) above the current level. All of southern Florida was covered by a shallow sea. Several parallel lines of reef formed along the edge of the submerged Florida plateau, stretching from the present Miami area to what is now the Dry Tortugas. The area behind this reef line was in effect a large lagoon, and the Miami limestone formed throughout the area from the deposition of oolites and the shells of bryozoans. Starting about 100,000 years ago the Wisconsin glaciation began lowering sea levels, exposing the floor of the lagoon. By 15,000 years ago, the sea level had dropped to 300 to 350 feet (90 to 110 m) below the contemporary level. The sea level rose quickly after that, stabilizing at the current level about 4000 years ago, leaving the mainland of South Florida just above sea level.</td>
-      <td>How many meters did the Sangamonian Stage raise sea levels compared to their present level?</td>
-      <td>{'text': ['8'], 'answer_start': [395]}</td>
+      <td>572f7193947a6a140053c973</td>
+      <td>Database</td>
+      <td>Just as the navigational approach would require programs to loop in order to collect records, the relational approach would require loops to collect information about any one record. Codd's solution to the necessary looping was a set-oriented language, a suggestion that would later spawn the ubiquitous SQL. Using a branch of mathematics known as tuple calculus, he demonstrated that such a system could support all the operations of normal databases (inserting, updating etc.) as well as providing a simple system for finding and returning sets of data in a single operation.</td>
+      <td>What type of math was used to create a system to find data sets?</td>
+      <td>{'text': ['tuple calculus'], 'answer_start': [348]}</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>56cda75062d2951400fa67c6</td>
-      <td>The_Legend_of_Zelda:_Twilight_Princess</td>
-      <td>Twilight Princess was released to universal critical acclaim and commercial success. It received perfect scores from major publications such as 1UP.com, Computer and Video Games, Electronic Gaming Monthly, Game Informer, GamesRadar, and GameSpy. On the review aggregators GameRankings and Metacritic, Twilight Princess has average scores of 95% and 95 for the Wii version and scores of 95% and 96 for the GameCube version. GameTrailers in their review called it one of the greatest games ever created.</td>
-      <td>Who counted the game among the best ever made?</td>
-      <td>{'text': ['GameTrailers'], 'answer_start': [423]}</td>
+      <td>5727ada7ff5b5019007d9268</td>
+      <td>Political_party</td>
+      <td>In fledgling democracies funding can also be provided by foreign aid. International donors provide financing to political parties in developing countries as a means to promote democracy and good governance. Support can be purely financial or otherwise. Frequently it is provided as capacity development activities including the development of party manifestos, party constitutions and campaigning skills. Developing links between ideologically linked parties is another common feature of international support for a party. Sometimes this can be perceived as directly supporting the political aims of a political party, such as the support of the US government to the Georgian party behind the Rose Revolution. Other donors work on a more neutral basis, where multiple donors provide grants in countries accessible by all parties for various aims defined by the recipients. There have been calls by leading development think-tanks, such as the Overseas Development Institute, to increase support to political parties as part of developing the capacity to deal with the demands of interest-driven donors to improve governance.</td>
+      <td>What can also be provided by foreign aid?</td>
+      <td>{'text': ['funding'], 'answer_start': [25]}</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>57267657708984140094c6f9</td>
-      <td>Mexico_City</td>
-      <td>Originally much of the valley laid beneath the waters of Lake Texcoco, a system of interconnected salt and freshwater lakes. The Aztecs built dikes to separate the fresh water used to raise crops in chinampas and to prevent recurrent floods. These dikes were destroyed during the siege of Tenochtitlan, and during colonial times the Spanish regularly drained the lake to prevent floods. Only a small section of the original lake remains, located outside the Federal District, in the municipality of Atenco, State of Mexico.</td>
-      <td>Who first built the dikes in Lake Texcoco?</td>
-      <td>{'text': ['The Aztecs'], 'answer_start': [125]}</td>
+      <td>57324b720fdd8d15006c6923</td>
+      <td>Protestantism</td>
+      <td>In Congregational and Presbyterian churches which profess a traditionally Calvinist or Reformed theology there are differing views regarding present-day continuation or cessation of the gifts (charismata) of the Spirit. Generally, however, Reformed charismatics distance themselves from renewal movements with tendencies which could be perceived as overemotional, such as Word of Faith, Toronto Blessing, Brownsville Revival and Lakeland Revival. Prominent Reformed charismatic denominations are the Sovereign Grace Churches and the Every Nation Churches in the USA, in Great Britain there is the Newfrontiers churches and movement, which leading figure is Terry Virgo.</td>
+      <td>Who heads the Newfrontiers movement?</td>
+      <td>{'text': ['Terry Virgo'], 'answer_start': [657]}</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>56cfe133234ae51400d9bfe3</td>
-      <td>New_York_City</td>
-      <td>The city's total area is 468.9 square miles (1,214 km2). 164.1 sq mi (425 km2) of this is water and 304.8 sq mi (789 km2) is land. The highest point in the city is Todt Hill on Staten Island, which, at 409.8 feet (124.9 m) above sea level, is the highest point on the Eastern Seaboard south of Maine. The summit of the ridge is mostly covered in woodlands as part of the Staten Island Greenbelt.</td>
-      <td>How many feet above sea level is Todt Hil?</td>
-      <td>{'text': ['409.8'], 'answer_start': [202]}</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>title</th>
-      <th>context</th>
-      <th>question</th>
-      <th>answers</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>572a72f97a1753140016af89</td>
-      <td>Miami</td>
-      <td>The surface bedrock under the Miami area is called Miami oolite or Miami limestone. This bedrock is covered by a thin layer of soil, and is no more than 50 feet (15 m) thick. Miami limestone formed as the result of the drastic changes in sea level associated with recent glaciations or ice ages. Beginning some 130,000 years ago the Sangamonian Stage raised sea levels to approximately 25 feet (8 m) above the current level. All of southern Florida was covered by a shallow sea. Several parallel lines of reef formed along the edge of the submerged Florida plateau, stretching from the present Miami area to what is now the Dry Tortugas. The area behind this reef line was in effect a large lagoon, and the Miami limestone formed throughout the area from the deposition of oolites and the shells of bryozoans. Starting about 100,000 years ago the Wisconsin glaciation began lowering sea levels, exposing the floor of the lagoon. By 15,000 years ago, the sea level had dropped to 300 to 350 feet (90 to 110 m) below the contemporary level. The sea level rose quickly after that, stabilizing at the current level about 4000 years ago, leaving the mainland of South Florida just above sea level.</td>
-      <td>How many meters did the Sangamonian Stage raise sea levels compared to their present level?</td>
-      <td>{'text': ['8'], 'answer_start': [395]}</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>56cda75062d2951400fa67c6</td>
-      <td>The_Legend_of_Zelda:_Twilight_Princess</td>
-      <td>Twilight Princess was released to universal critical acclaim and commercial success. It received perfect scores from major publications such as 1UP.com, Computer and Video Games, Electronic Gaming Monthly, Game Informer, GamesRadar, and GameSpy. On the review aggregators GameRankings and Metacritic, Twilight Princess has average scores of 95% and 95 for the Wii version and scores of 95% and 96 for the GameCube version. GameTrailers in their review called it one of the greatest games ever created.</td>
-      <td>Who counted the game among the best ever made?</td>
-      <td>{'text': ['GameTrailers'], 'answer_start': [423]}</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>57267657708984140094c6f9</td>
-      <td>Mexico_City</td>
-      <td>Originally much of the valley laid beneath the waters of Lake Texcoco, a system of interconnected salt and freshwater lakes. The Aztecs built dikes to separate the fresh water used to raise crops in chinampas and to prevent recurrent floods. These dikes were destroyed during the siege of Tenochtitlan, and during colonial times the Spanish regularly drained the lake to prevent floods. Only a small section of the original lake remains, located outside the Federal District, in the municipality of Atenco, State of Mexico.</td>
-      <td>Who first built the dikes in Lake Texcoco?</td>
-      <td>{'text': ['The Aztecs'], 'answer_start': [125]}</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>56cfe133234ae51400d9bfe3</td>
-      <td>New_York_City</td>
-      <td>The city's total area is 468.9 square miles (1,214 km2). 164.1 sq mi (425 km2) of this is water and 304.8 sq mi (789 km2) is land. The highest point in the city is Todt Hill on Staten Island, which, at 409.8 feet (124.9 m) above sea level, is the highest point on the Eastern Seaboard south of Maine. The summit of the ridge is mostly covered in woodlands as part of the Staten Island Greenbelt.</td>
-      <td>How many feet above sea level is Todt Hil?</td>
-      <td>{'text': ['409.8'], 'answer_start': [202]}</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>title</th>
-      <th>context</th>
-      <th>question</th>
-      <th>answers</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>572a72f97a1753140016af89</td>
-      <td>Miami</td>
-      <td>The surface bedrock under the Miami area is called Miami oolite or Miami limestone. This bedrock is covered by a thin layer of soil, and is no more than 50 feet (15 m) thick. Miami limestone formed as the result of the drastic changes in sea level associated with recent glaciations or ice ages. Beginning some 130,000 years ago the Sangamonian Stage raised sea levels to approximately 25 feet (8 m) above the current level. All of southern Florida was covered by a shallow sea. Several parallel lines of reef formed along the edge of the submerged Florida plateau, stretching from the present Miami area to what is now the Dry Tortugas. The area behind this reef line was in effect a large lagoon, and the Miami limestone formed throughout the area from the deposition of oolites and the shells of bryozoans. Starting about 100,000 years ago the Wisconsin glaciation began lowering sea levels, exposing the floor of the lagoon. By 15,000 years ago, the sea level had dropped to 300 to 350 feet (90 to 110 m) below the contemporary level. The sea level rose quickly after that, stabilizing at the current level about 4000 years ago, leaving the mainland of South Florida just above sea level.</td>
-      <td>How many meters did the Sangamonian Stage raise sea levels compared to their present level?</td>
-      <td>{'text': ['8'], 'answer_start': [395]}</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>56cda75062d2951400fa67c6</td>
-      <td>The_Legend_of_Zelda:_Twilight_Princess</td>
-      <td>Twilight Princess was released to universal critical acclaim and commercial success. It received perfect scores from major publications such as 1UP.com, Computer and Video Games, Electronic Gaming Monthly, Game Informer, GamesRadar, and GameSpy. On the review aggregators GameRankings and Metacritic, Twilight Princess has average scores of 95% and 95 for the Wii version and scores of 95% and 96 for the GameCube version. GameTrailers in their review called it one of the greatest games ever created.</td>
-      <td>Who counted the game among the best ever made?</td>
-      <td>{'text': ['GameTrailers'], 'answer_start': [423]}</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>57267657708984140094c6f9</td>
-      <td>Mexico_City</td>
-      <td>Originally much of the valley laid beneath the waters of Lake Texcoco, a system of interconnected salt and freshwater lakes. The Aztecs built dikes to separate the fresh water used to raise crops in chinampas and to prevent recurrent floods. These dikes were destroyed during the siege of Tenochtitlan, and during colonial times the Spanish regularly drained the lake to prevent floods. Only a small section of the original lake remains, located outside the Federal District, in the municipality of Atenco, State of Mexico.</td>
-      <td>Who first built the dikes in Lake Texcoco?</td>
-      <td>{'text': ['The Aztecs'], 'answer_start': [125]}</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>56cfe133234ae51400d9bfe3</td>
-      <td>New_York_City</td>
-      <td>The city's total area is 468.9 square miles (1,214 km2). 164.1 sq mi (425 km2) of this is water and 304.8 sq mi (789 km2) is land. The highest point in the city is Todt Hill on Staten Island, which, at 409.8 feet (124.9 m) above sea level, is the highest point on the Eastern Seaboard south of Maine. The summit of the ridge is mostly covered in woodlands as part of the Staten Island Greenbelt.</td>
-      <td>How many feet above sea level is Todt Hil?</td>
-      <td>{'text': ['409.8'], 'answer_start': [202]}</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>title</th>
-      <th>context</th>
-      <th>question</th>
-      <th>answers</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>572a72f97a1753140016af89</td>
-      <td>Miami</td>
-      <td>The surface bedrock under the Miami area is called Miami oolite or Miami limestone. This bedrock is covered by a thin layer of soil, and is no more than 50 feet (15 m) thick. Miami limestone formed as the result of the drastic changes in sea level associated with recent glaciations or ice ages. Beginning some 130,000 years ago the Sangamonian Stage raised sea levels to approximately 25 feet (8 m) above the current level. All of southern Florida was covered by a shallow sea. Several parallel lines of reef formed along the edge of the submerged Florida plateau, stretching from the present Miami area to what is now the Dry Tortugas. The area behind this reef line was in effect a large lagoon, and the Miami limestone formed throughout the area from the deposition of oolites and the shells of bryozoans. Starting about 100,000 years ago the Wisconsin glaciation began lowering sea levels, exposing the floor of the lagoon. By 15,000 years ago, the sea level had dropped to 300 to 350 feet (90 to 110 m) below the contemporary level. The sea level rose quickly after that, stabilizing at the current level about 4000 years ago, leaving the mainland of South Florida just above sea level.</td>
-      <td>How many meters did the Sangamonian Stage raise sea levels compared to their present level?</td>
-      <td>{'text': ['8'], 'answer_start': [395]}</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>56cda75062d2951400fa67c6</td>
-      <td>The_Legend_of_Zelda:_Twilight_Princess</td>
-      <td>Twilight Princess was released to universal critical acclaim and commercial success. It received perfect scores from major publications such as 1UP.com, Computer and Video Games, Electronic Gaming Monthly, Game Informer, GamesRadar, and GameSpy. On the review aggregators GameRankings and Metacritic, Twilight Princess has average scores of 95% and 95 for the Wii version and scores of 95% and 96 for the GameCube version. GameTrailers in their review called it one of the greatest games ever created.</td>
-      <td>Who counted the game among the best ever made?</td>
-      <td>{'text': ['GameTrailers'], 'answer_start': [423]}</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>57267657708984140094c6f9</td>
-      <td>Mexico_City</td>
-      <td>Originally much of the valley laid beneath the waters of Lake Texcoco, a system of interconnected salt and freshwater lakes. The Aztecs built dikes to separate the fresh water used to raise crops in chinampas and to prevent recurrent floods. These dikes were destroyed during the siege of Tenochtitlan, and during colonial times the Spanish regularly drained the lake to prevent floods. Only a small section of the original lake remains, located outside the Federal District, in the municipality of Atenco, State of Mexico.</td>
-      <td>Who first built the dikes in Lake Texcoco?</td>
-      <td>{'text': ['The Aztecs'], 'answer_start': [125]}</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>56cfe133234ae51400d9bfe3</td>
-      <td>New_York_City</td>
-      <td>The city's total area is 468.9 square miles (1,214 km2). 164.1 sq mi (425 km2) of this is water and 304.8 sq mi (789 km2) is land. The highest point in the city is Todt Hill on Staten Island, which, at 409.8 feet (124.9 m) above sea level, is the highest point on the Eastern Seaboard south of Maine. The summit of the ridge is mostly covered in woodlands as part of the Staten Island Greenbelt.</td>
-      <td>How many feet above sea level is Todt Hil?</td>
-      <td>{'text': ['409.8'], 'answer_start': [202]}</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>title</th>
-      <th>context</th>
-      <th>question</th>
-      <th>answers</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>572a72f97a1753140016af89</td>
-      <td>Miami</td>
-      <td>The surface bedrock under the Miami area is called Miami oolite or Miami limestone. This bedrock is covered by a thin layer of soil, and is no more than 50 feet (15 m) thick. Miami limestone formed as the result of the drastic changes in sea level associated with recent glaciations or ice ages. Beginning some 130,000 years ago the Sangamonian Stage raised sea levels to approximately 25 feet (8 m) above the current level. All of southern Florida was covered by a shallow sea. Several parallel lines of reef formed along the edge of the submerged Florida plateau, stretching from the present Miami area to what is now the Dry Tortugas. The area behind this reef line was in effect a large lagoon, and the Miami limestone formed throughout the area from the deposition of oolites and the shells of bryozoans. Starting about 100,000 years ago the Wisconsin glaciation began lowering sea levels, exposing the floor of the lagoon. By 15,000 years ago, the sea level had dropped to 300 to 350 feet (90 to 110 m) below the contemporary level. The sea level rose quickly after that, stabilizing at the current level about 4000 years ago, leaving the mainland of South Florida just above sea level.</td>
-      <td>How many meters did the Sangamonian Stage raise sea levels compared to their present level?</td>
-      <td>{'text': ['8'], 'answer_start': [395]}</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>56cda75062d2951400fa67c6</td>
-      <td>The_Legend_of_Zelda:_Twilight_Princess</td>
-      <td>Twilight Princess was released to universal critical acclaim and commercial success. It received perfect scores from major publications such as 1UP.com, Computer and Video Games, Electronic Gaming Monthly, Game Informer, GamesRadar, and GameSpy. On the review aggregators GameRankings and Metacritic, Twilight Princess has average scores of 95% and 95 for the Wii version and scores of 95% and 96 for the GameCube version. GameTrailers in their review called it one of the greatest games ever created.</td>
-      <td>Who counted the game among the best ever made?</td>
-      <td>{'text': ['GameTrailers'], 'answer_start': [423]}</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>57267657708984140094c6f9</td>
-      <td>Mexico_City</td>
-      <td>Originally much of the valley laid beneath the waters of Lake Texcoco, a system of interconnected salt and freshwater lakes. The Aztecs built dikes to separate the fresh water used to raise crops in chinampas and to prevent recurrent floods. These dikes were destroyed during the siege of Tenochtitlan, and during colonial times the Spanish regularly drained the lake to prevent floods. Only a small section of the original lake remains, located outside the Federal District, in the municipality of Atenco, State of Mexico.</td>
-      <td>Who first built the dikes in Lake Texcoco?</td>
-      <td>{'text': ['The Aztecs'], 'answer_start': [125]}</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>56cfe133234ae51400d9bfe3</td>
-      <td>New_York_City</td>
-      <td>The city's total area is 468.9 square miles (1,214 km2). 164.1 sq mi (425 km2) of this is water and 304.8 sq mi (789 km2) is land. The highest point in the city is Todt Hill on Staten Island, which, at 409.8 feet (124.9 m) above sea level, is the highest point on the Eastern Seaboard south of Maine. The summit of the ridge is mostly covered in woodlands as part of the Staten Island Greenbelt.</td>
-      <td>How many feet above sea level is Todt Hil?</td>
-      <td>{'text': ['409.8'], 'answer_start': [202]}</td>
+      <td>5726fa4bdd62a815002e96b0</td>
+      <td>Napoleon</td>
+      <td>After the fall of Napoleon, not only was Napoleonic Code retained by conquered countries including the Netherlands, Belgium, parts of Italy and Germany, but has been used as the basis of certain parts of law outside Europe including the Dominican Republic, the US state of Louisiana and the Canadian province of Quebec. The memory of Napoleon in Poland is favorable, for his support for independence and opposition to Russia, his legal code, the abolition of serfdom, and the introduction of modern middle class bureaucracies.</td>
+      <td>One reason Poland views Napoleon favorably is due to his abolition of what form of indentured servitude?</td>
+      <td>{'text': ['serfdom'], 'answer_start': [459]}</td>
     </tr>
   </tbody>
 </table>
